@@ -39,7 +39,8 @@ bool IsCardName(const std::string& str) {
 }
 
 int CardPoints(const std::string& card_name) {
-  if (IsFaceCard(card_name)) return 10;
+  if (IsFaceCard(card_name)) {return 10;
+  }
   if (IsAce(card_name)) {
     return 1;
   }
