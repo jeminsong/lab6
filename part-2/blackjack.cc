@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Jemin Song
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
+// Partners: @NotNyela
 
 #include <iostream>
 #include <string>
@@ -9,22 +12,19 @@
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments(argv, argv + argc);
 
-  // TODO: Validate that the number of arguments is correct.
-  // If not, print an error message and return a non-zero value.
+  if (arguments.size() != 3) {
+    std::cout << "error: you must supply two arguments\n";
+    return 1;
+  }
+  std::string card_1 = arguments[1];
+  std::string card_2 = arguments[2];
 
-  // TODO: declare a variable to hold the first card name, and initialize
-  // the variable with the first command line argument
+  if (!IsCardName(card_1) || !IsCardName(card_2)) {
+    std::cout << "error: unknown card\n";
+    return 1;
+  }
 
-  // TODO: declare a variable to hold the second card name, and initialize
-  // the variable with the second command line argument
-
-  // TODO: if either card name is not valid, print out an error message and
-  // return a non-zero value.
-
-  // TODO: declare a variable to hold the total score, and initialize
-  // the variable with the result of calling the TwoHandScore function
-
-  // TODO: write a cout statement that prints the total score on its own line
-
+  int total_score = TwoCardHandScore(card_1, card_2);
+  std::cout << total_score << "\n";
   return 0;
 }
